@@ -11,7 +11,7 @@ class ImagesScreen extends StatefulWidget {
   State<ImagesScreen> createState() => _ImagesScreenState();
 }
 
-class _ImagesScreenState extends State<ImagesScreen> with Helpers{
+class _ImagesScreenState extends State<ImagesScreen> with Helpers {
   ImagesGetxController controller = Get.put(ImagesGetxController());
 
   @override
@@ -62,7 +62,8 @@ class _ImagesScreenState extends State<ImagesScreen> with Helpers{
                           color: Colors.black38,
                           alignment: AlignmentDirectional.centerEnd,
                           child: IconButton(
-                              onPressed: () async => deleteImage(id: controller.images[index].id),
+                              onPressed: () async =>
+                                  deleteImage(id: controller.images[index].id),
                               icon: Icon(
                                 Icons.delete,
                                 color: Colors.red.shade800,
@@ -96,7 +97,7 @@ class _ImagesScreenState extends State<ImagesScreen> with Helpers{
 
   Future<void> deleteImage({required int id}) async {
     // bool deleted =
-        await ImagesGetxController.to.delete(context: context, id: id);
+    await ImagesGetxController.to.delete(context: context, id: id);
     // print(deleted);
     // String message =
     //     deleted ? 'Image deleted successfully' : 'Failed to delete image';
